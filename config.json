@@ -1,0 +1,129 @@
+{
+	"info": 
+	{ 
+		"name": { "_ru": "api Документатор", "_en": "api documentator" },
+		"alias": "apidocumentator",
+		"namespace": "aspro", 
+		"icon": " fa-university", 
+		"version": "0.0.1", 
+		"layout": "metronic4",
+		"description": { 
+			"_ru": "Документатор по REST API Flowlu.",
+			"_en": "Documentator po REST API Flowlu."
+			}, 
+		"public": true, 
+		"type": "dev", 
+		"mobile": false, 
+		"auto_install_lang": { "en": false, "ru": false },
+		"use_git": true
+	},
+
+	"settings": [ ],
+	"fieldsets": [
+		{
+			"title": {
+				"_ru": "Модули системы",
+				"_en": "System module"
+			},
+			"name": "doc_items",
+			"label_field": "name",
+			"journal": true,
+			"journal_fields": [],
+			"description": {
+				"_ru": "",
+				"_en": ""
+			},
+			"groups": {
+				"general": {
+					"_ru": "Основные поля",
+					"_en": "General fields"
+				}
+			},
+			"fields": [
+				{
+					"name": "id",
+					"type": "int",
+					"description": {
+						"_ru": "Идентификатор записи в базе данных вашего аккаунта. Служебное поле, присваивается автоматически при создании записи. Не может быть изменен, удален",
+						"_en": "Entry id"
+					}
+				},
+				{
+					"name": "module_id",
+					"type": "int",
+					"not_null": true,
+					"index": true,
+					"description": {
+						"ru": "Идентификатор модуля",
+						"en": "Module ID"
+					}
+
+				},
+				{
+					"name": "module_code",
+					"type": "string",
+					"not_null": true,
+					"description": {
+						"ru": "Код модуля",
+						"en": "Module Code"
+					}
+
+				},
+				{
+					"name": "language_id",
+					"type": "int",
+					"not_null": false,
+					"description": {
+						"ru": "Идентификатор языка",
+						"en": "Language id"
+					}
+
+				},
+				{
+					"name": "content",
+					"type": "string",
+					"description": {
+						"ru": "Дополнительный контент для модуля",
+						"en": "Module extra content"
+					}
+
+				},
+				{
+					"name": "ordering",
+					"type": "int",
+					"description": {
+						"ru": "Индекс сортировки, система сортирует от меньшего к большему. Например: запись со значением поля 1, будет выше записи со значением поля 2",
+						"en": "Module position on board"
+					}
+
+				}
+
+
+
+			]
+		}
+	],
+	
+	"menu": [ 
+		{ "name": { "_ru": "API Документатор", "_en": "API Documentator" }, "alias": "index", "file": "index.php", "access": ["admin", "employee"] }
+	],
+	
+	"menu_mobile": [ ],	
+	
+	"menu_chromeext": [ ],
+	
+	"roles": { 
+		"employee": {
+            "name": {
+            	"_ru": "Сотрудник",
+            	"_en": "Employee"
+            	},
+            "description": {
+            	"_ru": "",
+            	"_en": ""
+            }
+        } 
+	},
+	
+	"init_data": [ ]
+}
